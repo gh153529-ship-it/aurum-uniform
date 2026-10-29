@@ -1,0 +1,17 @@
+{
+  "name": "aurum-uniform",
+  "version": "2.0.0",
+  "description": "AURUM Uniform – website bán áo đồng phục (vanilla JavaScript ES modules + REST API Node/Express)",
+  "type": "module",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js",
+    "seed": "node server/seed.js --force"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

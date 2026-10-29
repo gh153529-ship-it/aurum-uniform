@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURUM Admin</title>
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/admin.css">
+</head>
+<body class="admin-body">
+  <div class="admin">
+    <aside id="sidebar"></aside>
+    <div class="admin-main">
+      <header id="admin-top"></header>
+      <main class="admin-content" id="page">
+        <div class="toolbar">
+          <input class="input grow" id="search" type="search" placeholder="Tìm danh mục...">
+          <select class="select" id="f-status">
+            <option value="">Tất cả trạng thái</option>
+            <option value="1">Đang hiển thị</option>
+            <option value="0">Đang ẩn</option>
+          </select>
+          <button class="btn btn-gold" id="btn-add">+ Thêm danh mục</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>ID</th><th>Tên danh mục</th><th>Đường dẫn (slug)</th><th>Mô tả</th><th class="center">Số sản phẩm</th><th>Trạng thái</th><th class="num">Thao tác</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+          <div class="table-foot" id="foot"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="js/categories.js"></script>
+</body>
+</html>

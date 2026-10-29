@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURUM Admin</title>
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/admin.css">
+</head>
+<body class="admin-body">
+  <div class="admin">
+    <aside id="sidebar"></aside>
+    <div class="admin-main">
+      <header id="admin-top"></header>
+      <main class="admin-content" id="page">
+        <div class="toolbar">
+          <div class="seg" id="f-status"></div>
+        </div>
+        <div class="toolbar">
+          <input class="input grow" id="search" type="search" placeholder="Tìm theo mã đơn, tên khách, số điện thoại...">
+          <select class="select" id="f-payment">
+            <option value="">Mọi phương thức thanh toán</option>
+            <option value="cod">COD</option>
+            <option value="bank">Chuyển khoản</option>
+            <option value="ewallet">Ví điện tử</option>
+          </select>
+          <input class="input" type="date" id="f-from" title="Từ ngày">
+          <input class="input" type="date" id="f-to" title="Đến ngày">
+          <button class="btn btn-outline btn-sm" id="btn-clear">Xoá lọc</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Mã đơn</th><th>Khách hàng</th><th>Ngày đặt</th><th class="center">SL áo</th><th class="num">Tổng tiền</th><th>Thanh toán</th><th>Trạng thái</th><th class="num">Thao tác</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+          <div class="table-foot" id="foot"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="js/orders.js"></script>
+</body>
+</html>

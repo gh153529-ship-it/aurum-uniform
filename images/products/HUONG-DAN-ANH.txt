@@ -1,0 +1,17 @@
+HƯỚNG DẪN ẢNH
+=============
+Thư mục ảnh:
+  images/products/   ảnh sản phẩm vuông (p1.webp ... p20.webp)
+  images/posts/      ảnh đại diện bài viết 16:9 (post-1.webp ...)
+  images/og/         ảnh chia sẻ Facebook 1200×630 (product-<id>.jpg, post-<id>.jpg) – server tự dùng nếu có
+  images/og-default.jpg  ảnh chia sẻ mặc định của website
+
+CÁCH 1 – Qua trang quản trị (khuyên dùng)
+  Admin → Quản lý sản phẩm → Sửa → "Ảnh sản phẩm" → chọn file từ máy.
+  Admin → Bài viết → Sửa → "Ảnh đại diện";  Admin → Tối ưu SEO hệ thống → "Ảnh chia sẻ mặc định".
+  Trình duyệt tự nén sang WebP rồi lưu vào đúng thư mục.
+
+CÁCH 2 – Chép tay
+  Đặt file vào thư mục theo đúng tên mẫu, ví dụ p1.webp (p<mã sản phẩm>.webp).
+  Ảnh sản phẩm nên vuông 800–900px, mỗi ảnh < 100KB. Nén WebP miễn phí tại: https://squoosh.app
+  Khi chưa có file ảnh, trang tự hiện hình áo minh hoạ (không bị vỡ hình).

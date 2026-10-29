@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ hàng – AURUM Uniform</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-banner">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Trang chủ</a><span>/</span>Giỏ hàng</div>
+      <h1>Giỏ hàng của bạn</h1>
+      <div class="steps-bar">
+        <div class="on" data-n="1">Giỏ hàng</div>
+        <div data-n="2">Thanh toán</div>
+        <div data-n="3">Hoàn tất</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <div id="added-alert"></div>
+    <div class="cart-layout" id="cart-root">
+      <section class="box">
+        <h3>Sản phẩm (<span id="cart-qty">0</span> áo)</h3>
+        <div id="cart-items"></div>
+        <div class="cart-actions">
+          <a href="products.html" class="btn btn-outline btn-sm">← Tiếp tục mua sắm</a>
+          <button class="btn btn-outline btn-sm" id="btn-clear-cart">Xoá toàn bộ giỏ hàng</button>
+        </div>
+      </section>
+
+      <aside class="box">
+        <h3>Tóm tắt đơn hàng</h3>
+        <div class="ship-progress" id="ship-progress"></div>
+        <div id="summary"></div>
+        <a href="checkout.html" class="btn btn-gold btn-block" id="btn-checkout" style="margin-top:16px">Tiến hành thanh toán →</a>
+        <p class="muted" style="font-size:12.5px; text-align:center; margin:12px 0 0">Chiết khấu sỉ được tính theo tổng số lượng của mỗi mẫu áo.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script type="module" src="js/pages/cart.js"></script>
+</body>
+</html>

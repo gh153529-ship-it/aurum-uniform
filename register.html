@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký – AURUM Uniform</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="auth-wrap">
+    <div class="auth-side">
+      <span class="eyebrow gold">Thành viên AURUM</span>
+      <h2>Tạo tài khoản<br><em>chỉ trong 1 phút</em></h2>
+      <ul>
+        <li>Lưu sẵn địa chỉ giao hàng của công ty</li>
+        <li>Xem lại lịch sử đặt đồng phục</li>
+        <li>Ưu tiên tư vấn & thiết kế mẫu miễn phí</li>
+      </ul>
+    </div>
+
+    <div class="auth-form-wrap">
+      <div class="auth-card">
+        <h1>Đăng ký</h1>
+        <p class="muted">Đã có tài khoản? <a href="login.html" class="link">Đăng nhập</a></p>
+        <div id="form-alert"></div>
+        <form id="register-form" class="form-grid" novalidate>
+          <div class="field">
+            <label for="name">Họ tên / Tên công ty <span class="req">*</span></label>
+            <input class="input" id="name" placeholder="Nguyễn Văn A" autocomplete="name">
+          </div>
+          <div class="form-grid two">
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input class="input" type="email" id="email" placeholder="ban@congty.vn" autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="phone">Số điện thoại <span class="req">*</span></label>
+              <input class="input" type="tel" id="phone" placeholder="09xxxxxxxx" autocomplete="tel">
+            </div>
+          </div>
+          <div class="field">
+            <label for="address">Địa chỉ</label>
+            <input class="input" id="address" placeholder="Số nhà, đường, quận/huyện, tỉnh/thành" autocomplete="street-address">
+          </div>
+          <div class="form-grid two">
+            <div class="field">
+              <label for="password">Mật khẩu <span class="req">*</span></label>
+              <div class="pw-wrap">
+                <input class="input" type="password" id="password" placeholder="Tối thiểu 6 ký tự" autocomplete="new-password">
+                <button type="button" class="pw-toggle" data-for="password">Hiện</button>
+              </div>
+            </div>
+            <div class="field">
+              <label for="confirm">Nhập lại mật khẩu <span class="req">*</span></label>
+              <input class="input" type="password" id="confirm" placeholder="••••••" autocomplete="new-password">
+            </div>
+          </div>
+          <div class="field">
+            <label class="check"><input type="checkbox" id="agree"> Tôi đồng ý với điều khoản sử dụng của AURUM</label>
+          </div>
+          <button class="btn btn-dark btn-block" type="submit">Tạo tài khoản</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="js/pages/auth.js"></script>
+</body>
+</html>

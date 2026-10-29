@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập – AURUM Uniform</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="auth-wrap">
+    <div class="auth-side">
+      <span class="eyebrow gold">Chào mừng trở lại</span>
+      <h2>Đồng phục <em>đẳng cấp</em><br>cho đội ngũ của bạn</h2>
+      <ul>
+        <li>Theo dõi đơn hàng đồng phục</li>
+        <li>Lưu thông tin giao hàng, đặt lại nhanh</li>
+        <li>Nhận ưu đãi riêng cho doanh nghiệp</li>
+      </ul>
+    </div>
+
+    <div class="auth-form-wrap">
+      <div class="auth-card">
+        <h1>Đăng nhập</h1>
+        <p class="muted">Chưa có tài khoản? <a href="register.html" class="link">Đăng ký ngay</a></p>
+        <div id="form-alert"></div>
+        <form id="login-form" class="form-grid" novalidate>
+          <div class="field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input class="input" type="email" id="email" placeholder="ban@congty.vn" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="password">Mật khẩu <span class="req">*</span></label>
+            <div class="pw-wrap">
+              <input class="input" type="password" id="password" placeholder="••••••" autocomplete="current-password">
+              <button type="button" class="pw-toggle" data-for="password">Hiện</button>
+            </div>
+          </div>
+          <div class="form-row">
+            <label class="check"><input type="checkbox" id="remember" checked> Ghi nhớ đăng nhập</label>
+            <a href="#" class="link" id="forgot">Quên mật khẩu?</a>
+          </div>
+          <button class="btn btn-dark btn-block" type="submit">Đăng nhập</button>
+        </form>
+
+        <div class="demo-box">
+          <b>Tài khoản dùng thử</b><br>
+          Quản trị: <code>admin@aurum.vn</code> / <code>admin123</code> <a href="#" class="link" data-demo="admin">Điền nhanh</a><br>
+          Khách hàng: <code>khach@aurum.vn</code> / <code>123456</code> <a href="#" class="link" data-demo="customer">Điền nhanh</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="js/pages/auth.js"></script>
+</body>
+</html>

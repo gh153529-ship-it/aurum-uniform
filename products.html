@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sản phẩm – AURUM Uniform</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-banner">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Trang chủ</a><span>/</span><span id="crumb-current">Sản phẩm</span></div>
+      <h1 id="page-title">Tất cả sản phẩm</h1>
+    </div>
+  </section>
+
+  <main class="container shop-layout">
+    <!-- BỘ LỌC -->
+    <aside class="filters" id="filters">
+      <div class="filter-group">
+        <h4>Danh mục</h4>
+        <div class="cat-filter" id="cat-filter"></div>
+      </div>
+      <div class="filter-group">
+        <h4>Khoảng giá</h4>
+        <label class="check"><input type="radio" name="price" value="all" checked> Tất cả</label>
+        <label class="check"><input type="radio" name="price" value="0-150000"> Dưới 150.000₫</label>
+        <label class="check"><input type="radio" name="price" value="150000-300000"> 150.000₫ – 300.000₫</label>
+        <label class="check"><input type="radio" name="price" value="300000-99999999"> Trên 300.000₫</label>
+        <div class="price-range" role="group" aria-label="Nhập khoảng giá">
+          <input type="number" id="price-min" class="input input-sm" min="0" step="1000" placeholder="Từ (₫)" aria-label="Giá từ">
+          <span>–</span>
+          <input type="number" id="price-max" class="input input-sm" min="0" step="1000" placeholder="Đến (₫)" aria-label="Giá đến">
+          <button type="button" class="btn btn-dark btn-sm" id="price-apply">Áp dụng</button>
+        </div>
+        <small class="field-error" id="price-error" style="display:block"></small>
+      </div>
+      <div class="filter-group">
+        <h4>Màu sắc</h4>
+        <div class="color-filter" id="color-filter"></div>
+      </div>
+      <div class="filter-group">
+        <label class="check"><input type="checkbox" id="f-instock"> Chỉ hiện sản phẩm còn hàng</label>
+        <label class="check"><input type="checkbox" id="f-sale"> Đang giảm giá</label>
+      </div>
+      <div class="filter-group">
+        <button class="btn btn-outline btn-block btn-sm" id="btn-clear">Xoá bộ lọc</button>
+      </div>
+    </aside>
+
+    <!-- DANH SÁCH -->
+    <section>
+      <div class="shop-toolbar">
+        <div>
+          <button class="btn btn-outline btn-sm filter-toggle" id="filter-toggle">☰ Bộ lọc</button>
+          <span class="result" id="result-count"></span>
+        </div>
+        <div style="display:flex; gap:10px; align-items:center">
+          <label for="sort" class="muted" style="font-size:14px">Sắp xếp:</label>
+          <select id="sort" class="select select-sm">
+            <option value="default">Mặc định</option>
+            <option value="bestseller">Bán chạy</option>
+            <option value="newest">Mới nhất</option>
+            <option value="price-asc">Giá tăng dần</option>
+            <option value="price-desc">Giá giảm dần</option>
+            <option value="name">Tên A → Z</option>
+          </select>
+        </div>
+      </div>
+      <div class="chips" id="active-chips" style="margin-bottom:16px"></div>
+      <div class="product-grid cols-3" id="product-list"></div>
+      <div class="pagination" id="pagination"></div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script type="module" src="js/pages/products.js"></script>
+</body>
+</html>

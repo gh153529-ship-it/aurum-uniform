@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURUM Admin</title>
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/admin.css">
+</head>
+<body class="admin-body">
+  <div class="admin">
+    <aside id="sidebar"></aside>
+    <div class="admin-main">
+      <header id="admin-top"></header>
+      <main class="admin-content" id="page">
+        <div class="toolbar">
+          <span class="muted" style="font-size:14px">Thống kê theo:</span>
+          <div class="seg" id="period">
+            <button data-p="all" class="active">Tất cả</button>
+            <button data-p="month">Tháng này</button>
+            <button data-p="30">30 ngày</button>
+            <button data-p="year">Năm nay</button>
+          </div>
+          <span class="spacer"></span>
+          <span class="muted" style="font-size:13px">* Doanh thu & số lượng bán tính trên các đơn chưa bị huỷ</span>
+        </div>
+
+        <!-- 3 chỉ số chính theo yêu cầu + số đơn -->
+        <section class="stats">
+          <div class="stat dark">
+            <div class="stat-ico">₫</div>
+            <div class="stat-label">Doanh thu</div>
+            <div class="stat-value" id="s-revenue">0₫</div>
+            <div class="stat-sub" id="s-revenue-sub"></div>
+          </div>
+          <div class="stat">
+            <div class="stat-ico">👕</div>
+            <div class="stat-label">Sản phẩm đã được đặt mua</div>
+            <div class="stat-value" id="s-sold">0</div>
+            <div class="stat-sub" id="s-sold-sub"></div>
+          </div>
+          <div class="stat">
+            <div class="stat-ico">📦</div>
+            <div class="stat-label">Sản phẩm tồn kho</div>
+            <div class="stat-value" id="s-stock">0</div>
+            <div class="stat-sub" id="s-stock-sub"></div>
+          </div>
+          <div class="stat">
+            <div class="stat-ico">🧾</div>
+            <div class="stat-label">Đơn hàng</div>
+            <div class="stat-value" id="s-orders">0</div>
+            <div class="stat-sub" id="s-orders-sub"></div>
+          </div>
+        </section>
+
+        <section class="grid-2">
+          <div class="panel">
+            <div class="panel-head"><h3>Doanh thu 6 tháng gần nhất</h3><span class="tag tag-gold">VNĐ</span></div>
+            <div class="chart-box"><canvas id="chart-revenue"></canvas><div class="chart-tip" id="tip-revenue"></div></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>Số lượng bán theo danh mục</h3></div>
+            <div class="chart-box" style="height:200px"><canvas id="chart-cat"></canvas></div>
+            <div class="legend" id="legend-cat"></div>
+          </div>
+        </section>
+
+        <section class="grid-2 even">
+          <div class="panel">
+            <div class="panel-head"><h3>Top sản phẩm bán chạy</h3><a href="products.html" class="link" style="font-size:13.5px">Quản lý sản phẩm →</a></div>
+            <div class="table-wrap"><table class="data" id="tbl-top"></table></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>Tồn kho theo sản phẩm</h3>
+              <div class="seg" id="stock-filter"><button data-f="all" class="active">Tất cả</button><button data-f="low">Sắp hết</button></div>
+            </div>
+            <div class="table-wrap" style="max-height:360px; overflow:auto"><table class="data" id="tbl-stock"></table></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head"><h3>Đơn hàng gần đây</h3><a href="orders.html" class="link" style="font-size:13.5px">Xem tất cả →</a></div>
+          <div class="table-wrap"><table class="data" id="tbl-recent"></table></div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

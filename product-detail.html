@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết sản phẩm – AURUM Uniform</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container" id="detail-root">
+    <div class="crumbs" style="margin-top:24px; color:var(--muted)" id="crumbs"></div>
+
+    <div class="detail">
+      <!-- ẢNH -->
+      <div>
+        <div class="gallery-main" id="gallery-main"></div>
+        <div class="gallery-thumbs" id="gallery-thumbs"></div>
+      </div>
+
+      <!-- THÔNG TIN -->
+      <div class="detail-info">
+        <span class="eyebrow" id="d-cat"></span>
+        <h1 id="d-name"></h1>
+        <div class="detail-meta">
+          <span>Mã: <b id="d-sku"></b></span>
+          <span>Đã bán: <b id="d-sold"></b></span>
+          <span id="d-stock"></span>
+        </div>
+        <div class="detail-price">
+          <span class="price" id="d-price"></span>
+          <span class="old-price" id="d-old"></span>
+          <span class="save" id="d-save"></span>
+        </div>
+
+        <div class="opt">
+          <div class="opt-label">Màu sắc: <span id="d-color-name"></span></div>
+          <div class="swatches" id="d-colors"></div>
+        </div>
+
+        <div class="opt">
+          <div class="opt-label">Kích thước <a href="#" class="link" id="btn-size-guide" style="font-weight:600">📏 Bảng size</a></div>
+          <div class="sizes" id="d-sizes"></div>
+        </div>
+
+        <div class="opt">
+          <div class="opt-label">Số lượng <span id="d-tier-note"></span></div>
+          <div class="qty">
+            <button type="button" data-step="-1" aria-label="Giảm">−</button>
+            <input type="number" id="d-qty" value="1" min="1" aria-label="Số lượng">
+            <button type="button" data-step="1" aria-label="Tăng">+</button>
+          </div>
+          <div style="display:flex; gap:6px; margin-top:10px; flex-wrap:wrap">
+            <button class="btn btn-outline btn-sm" data-quick="10">10 áo</button>
+            <button class="btn btn-outline btn-sm" data-quick="20">20 áo</button>
+            <button class="btn btn-outline btn-sm" data-quick="50">50 áo</button>
+            <button class="btn btn-outline btn-sm" data-quick="100">100 áo</button>
+          </div>
+        </div>
+
+        <div class="opt">
+          <div class="opt-label">Giá sỉ theo số lượng</div>
+          <table class="tier-table" id="d-tiers"></table>
+        </div>
+
+        <div class="opt print-box">
+          <label class="switch"><input type="checkbox" id="print-on"> In / thêu tên, logo, số áo (+<span id="print-fee"></span>/áo)</label>
+          <div class="print-fields hidden" id="print-fields">
+            <div class="field full">
+              <label for="print-text">Nội dung in (tên công ty, tên nhân viên, số áo...)</label>
+              <input class="input" id="print-text" maxlength="40" placeholder="VD: AURUM CORP – No.10">
+            </div>
+            <div class="field">
+              <label for="print-pos">Vị trí in</label>
+              <select class="select" id="print-pos">
+                <option>Ngực trái</option>
+                <option>Ngực phải</option>
+                <option>Giữa ngực</option>
+                <option>Sau lưng</option>
+                <option>Tay áo</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="print-logo">Logo (tuỳ chọn)</label>
+              <input class="input" type="file" id="print-logo" accept="image/*" style="padding:8px">
+            </div>
+          </div>
+        </div>
+
+        <div class="line-total">
+          <div><small>Tạm tính (<span id="lt-qty">1</span> áo)</small><span id="lt-detail" style="font-size:12.5px;color:#aaa"></span></div>
+          <b id="lt-total"></b>
+        </div>
+
+        <div class="detail-actions">
+          <button class="btn btn-outline" id="btn-add">🛒 Thêm vào giỏ</button>
+          <button class="btn btn-dark" id="btn-buy">Mua ngay</button>
+        </div>
+
+        <div class="perks">
+          <span>✦ Thiết kế mẫu miễn phí</span>
+          <span>✦ Giao hàng 5 – 7 ngày</span>
+          <span>✦ Đổi size trong 7 ngày</span>
+          <span>✦ Bảo hành đường may 6 tháng</span>
+        </div>
+        <div id="d-share"></div>
+      </div>
+    </div>
+
+    <!-- TAB MÔ TẢ -->
+    <div class="tabs">
+      <div class="tab-nav">
+        <button class="active" data-tab="t-desc">Mô tả sản phẩm</button>
+        <button data-tab="t-spec">Thông số</button>
+        <button data-tab="t-care">Hướng dẫn bảo quản</button>
+      </div>
+      <div class="tab-panel active" id="t-desc"></div>
+      <div class="tab-panel" id="t-spec"></div>
+      <div class="tab-panel" id="t-care">
+        <ul>
+          <li>Giặt ở nhiệt độ dưới 40°C, lộn trái áo khi giặt máy.</li>
+          <li>Không dùng chất tẩy mạnh, không ngâm áo quá 30 phút.</li>
+          <li>Ủi mặt trái ở nhiệt độ trung bình, tránh ủi trực tiếp lên hình in.</li>
+          <li>Phơi nơi thoáng mát, tránh ánh nắng gắt để giữ màu.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- LIÊN QUAN -->
+    <section class="section">
+      <div class="section-head"><div><span class="eyebrow">Gợi ý</span><h2 class="section-title">Sản phẩm liên quan</h2></div></div>
+      <div class="product-grid" id="related"></div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script type="module" src="js/pages/product-detail.js"></script>
+</body>
+</html>

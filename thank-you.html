@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đặt hàng thành công – AURUM Uniform</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-banner">
+    <div class="container">
+      <div class="steps-bar" style="margin-top:0">
+        <div class="on" data-n="1">Giỏ hàng</div>
+        <div class="on" data-n="2">Thanh toán</div>
+        <div class="on" data-n="3">Hoàn tất</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="thanks" id="thanks-root">
+      <div class="thanks-icon">✓</div>
+      <h1>Cảm ơn bạn đã đặt hàng!</h1>
+      <p class="muted">AURUM đã nhận được đơn hàng và sẽ liên hệ xác nhận trong vòng <b>2 giờ làm việc</b>.<br>Thông tin đơn hàng đã được gửi tới email của bạn.</p>
+      <div class="order-code">Mã đơn hàng: <b id="t-code"></b></div>
+
+      <div class="box">
+        <h3>Thông tin đơn hàng</h3>
+        <div class="info-grid" id="t-info"></div>
+      </div>
+
+      <div class="box">
+        <h3>Sản phẩm đã đặt</h3>
+        <div class="mini-items" id="t-items" style="max-height:none"></div>
+        <div id="t-summary"></div>
+      </div>
+
+      <div class="box hidden" id="t-bank">
+        <h3>Hướng dẫn chuyển khoản</h3>
+        <div id="t-bank-info"></div>
+      </div>
+
+      <div style="display:flex; gap:12px; justify-content:center; margin-top:28px; flex-wrap:wrap">
+        <a href="products.html" class="btn btn-dark">Tiếp tục mua sắm</a>
+        <a href="index.html" class="btn btn-outline">Về trang chủ</a>
+        <button class="btn btn-outline" id="btn-print">🖨 In đơn hàng</button>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script type="module" src="js/pages/thank-you.js"></script>
+</body>
+</html>

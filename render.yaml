@@ -1,0 +1,22 @@
+# Deploy lên Render.com (Blueprint): server vừa chạy API vừa phục vụ giao diện
+services:
+  - type: web
+    name: aurum-uniform
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      # Điền trên Render (Environment) sau khi có mã – giữ nguyên khi server khởi động lại:
+      - key: SITE_URL            # https://<ten-app>.onrender.com
+        sync: false
+      - key: GA_ID               # G-XXXXXXXXXX (Google Analytics 4)
+        sync: false
+      - key: GSC_VERIFICATION    # mã trong thẻ google-site-verification
+        sync: false
+      - key: FB_PAGE_URL         # https://www.facebook.com/<fanpage>
+        sync: false
+      - key: MESSENGER_USERNAME  # tên fanpage trong m.me/<...>
+        sync: false
